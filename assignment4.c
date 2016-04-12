@@ -21,7 +21,7 @@ float matrix[9][9]  = {
  {45, 46, 47, 48, 49, 50, 51, 52, 53},
  {54, 55, 56, 57, 58, 59, 60, 61, 62},
  {63, 64, 65, 66, 67, 68, 69, 70, 71},
- {72, 73, 74, 75, 76, 77, 78, 79, 80}}
+ {72, 73, 74, 75, 76, 77, 78, 79, 80}};
  
 float transpose[9][9] = {
  {0, 9,  18, 27, 36, 45, 54, 63, 72},
@@ -32,7 +32,7 @@ float transpose[9][9] = {
  {5, 14, 23, 32, 41, 50, 59, 68, 77},
  {6, 15, 24, 33, 42, 51, 60, 69, 78},
  {7, 16, 25, 34, 43, 52, 61, 70, 79},
- {8, 17, 26, 35, 44, 53, 62, 71, 80}}
+ {8, 17, 26, 35, 44, 53, 62, 71, 80}};
 
 
 int main(int argc, char *argv[]){
@@ -57,17 +57,19 @@ int main(int argc, char *argv[]){
 	MPI_Status status;
 	
 	//create and send row data
+	int testval = mpi_myrank*rowsize*chunk_size;
 	for(int i=0; i<chunk_size; i++){
 		//allocate row
 		matrix_rows[i] = malloc(rowsize * sizeof(float));
 		transpose_rows[i] = malloc(rowsize * sizeof(float));
 		for(int j=0; j<rowsize; j++){
-			matrix_rows[i][j] = GenVal(i*mpi_myrank);
+			//matrix_rows[i][j] = GenVal(i*mpi_myrank);
+			matrix_rows[i][j] = testval++;
 		}		
 		//send row data to the rank that needs it
-		for(int j=0; j<chunk_size; j++){
-			MPI_Isend(matrix_rows[i][j*chunk_size], chunk_size, MPI_INT, j, i, MPI_COMM_WORLD, &request);
-			MPI_Request_free(request);
+		for(int j=0; j<mpi_commsize; j++){
+			MPI_Isend(&(matrix_rows[i][j*chunk_size]), chunk_size, MPI_INT, j, mpi_myrank*i+i, MPI_COMM_WORLD, &request);
+			MPI_Request_free(&request);
 		}
 	}
 	
@@ -77,29 +79,32 @@ int main(int argc, char *argv[]){
 	float* tmp = malloc(chunk_size * sizeof(float));
 	
 	//from each rank, receive row_size/rank rows
-	for(int j=0; j<chunk_size; j++){//for each rank
+	for(int j=0; j<mpi_commsize; j++){//for each rank
 		for(int i=0; i<chunk_size; i++){//for each row
-			MPI_Irecv(tmp, chunk_size, MPI_INT, j, i, MPI_COMM_WORLD, &request);
+			MPI_Irecv(tmp, chunk_size, MPI_INT, j, j*i+i, MPI_COMM_WORLD, &request);
 			MPI_Wait(&request, &status);
 			
+			//printf("tmpchunk from rank %d: %.0f %.0f %.0f\n",j,tmp[0],tmp[1],tmp[2]);
+
 			for(int k=0;k<chunk_size;k++){
 				//index of column in tmp == index of row in transpose
-				transpose_rows[i][j*chunk_size + k] = tmp[i];
+				transpose_rows[k][j*chunk_size + i] = tmp[k];
 			}
-		}
+		}	
 	}
 	
 	free(tmp);
 	
-	
-	MPI_Wait(&request2, &status);
-	
 	//finalize
     MPI_Barrier(MPI_COMM_WORLD);
 	
-	/*
-		DO OUTPUT
-	*/
+	for(int x=0; x<chunk_size; x++){
+		printf("rank %d transpose row %d:\n",mpi_myrank,x);
+		for(int k=0; k<rowsize;k++){
+			printf("%.0f\t",transpose_rows[x][k]);
+		}
+		printf("\n");
+	}
 	
     MPI_Finalize();
 	
