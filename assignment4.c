@@ -27,21 +27,21 @@ void print_MPI_error();
 int main(int argc, char *argv[]){
 	MPI_Request request;
 	MPI_Status status;
-    int mpi_myrank;
-    int mpi_commsize;
+	int mpi_myrank;
+	int mpi_commsize;
 	
 	//initialize MPI
-    MPI_Init(&argc, &argv);
-    MPI_Comm_size(MPI_COMM_WORLD, &mpi_commsize);
-    MPI_Comm_rank(MPI_COMM_WORLD, &mpi_myrank);
-    InitDefault();//initialize RNG streams
+	MPI_Init(&argc, &argv);
+	MPI_Comm_size(MPI_COMM_WORLD, &mpi_commsize);
+	MPI_Comm_rank(MPI_COMM_WORLD, &mpi_myrank);
+	InitDefault();//initialize RNG streams
 
-    //ranks_per_file - self explanatory. To only output to 1 file, ranks_per_file should be equal to the number of ranks.
-    //block_boundary - defines size, in Mb, of block of space between output of each rank. For testing, set to 0 for easy to read output.
+	//ranks_per_file - self explanatory. To only output to 1 file, ranks_per_file should be equal to the number of ranks.
+	//block_boundary - defines size, in Mb, of block of space between output of each rank. For testing, set to 0 for easy to read output.
 	rowsize = atoi(argv[1]);
 	chunk_size = rowsize / mpi_commsize;
 	ranks_per_file = atoi(argv[2]);
-    block_boundary = atoi(argv[3])*1048576;
+	block_boundary = atoi(argv[3])*1048576;
 
 	//initialize row data and send to other ranks
 	matrix = calloc(chunk_size, sizeof(float*));
@@ -85,12 +85,12 @@ int main(int argc, char *argv[]){
 	free(tmp);
 	
 	//finalize
-    MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Barrier(MPI_COMM_WORLD);
 
-    //adding together the matrix and transpose will occur here
-    //resulting sum will be in matrix
+	//adding together the matrix and transpose will occur here
+	//resulting sum will be in matrix
 
-    MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Barrier(MPI_COMM_WORLD);
 
 	/*
 	for (int i = 0; i < mpi_commsize; ++i) {
@@ -128,11 +128,11 @@ int main(int argc, char *argv[]){
 
 void print_MPI_error(int errcode, char *fun)
 {       
-    char errMessage[MPI_MAX_ERROR_STRING];
-    int len;
-    MPI_Error_string(errcode, errMessage, &len);
-    printf("Error in %s: %s\n", fun, errMessage);
-    MPI_Abort(MPI_COMM_WORLD, 1);
+	char errMessage[MPI_MAX_ERROR_STRING];
+	int len;
+	MPI_Error_string(errcode, errMessage, &len);
+	printf("Error in %s: %s\n", fun, errMessage);
+	MPI_Abort(MPI_COMM_WORLD, 1);
 }
 
 void output_single_file(int mpi_myrank){
@@ -143,27 +143,27 @@ void output_single_file(int mpi_myrank){
 	char* filename = "output.txt";
 
 	errcode = MPI_File_open(MPI_COMM_WORLD, filename, MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &fh);
-    if(errcode != MPI_SUCCESS){
-    	print_MPI_error(errcode, "MPI_File_open");
-    }
+	if(errcode != MPI_SUCCESS){
+		print_MPI_error(errcode, "MPI_File_open");
+	}
 
 	//output is binary, must format to read in terminal, replacing [rowlength] and [file]:
 	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
 	int offset_rank = mpi_myrank*(rowsize*chunk_size*sizeof(float) + block_boundary);
 	for (int row = 0; row < chunk_size; row++){
 		int offset_row = row*(rowsize*sizeof(float));
-	    errcode = MPI_File_write_at_all(fh, offset_rank + offset_row, matrix[row], rowsize, MPI_FLOAT, &file_status);
-	    if(errcode != MPI_SUCCESS){
-	    	print_MPI_error(errcode, "MPI_File_open");
-	    }
+		errcode = MPI_File_write_at_all(fh, offset_rank + offset_row, matrix[row], rowsize, MPI_FLOAT, &file_status);
+		if(errcode != MPI_SUCCESS){
+			print_MPI_error(errcode, "MPI_File_open");
+		}
 	}
 
-    errcode = MPI_File_close(&fh);
-    if(errcode != MPI_SUCCESS){
-    	print_MPI_error(errcode, "MPI_File_open");
-    }
+	errcode = MPI_File_close(&fh);
+	if(errcode != MPI_SUCCESS){
+		print_MPI_error(errcode, "MPI_File_open");
+	}
 
-    MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Barrier(MPI_COMM_WORLD);
 }
 
 void output_multi_file(int mpi_myrank){
@@ -172,7 +172,7 @@ void output_multi_file(int mpi_myrank){
 
 	MPI_Comm mpi_comm_file;
 	int mpi_file_myrank;
-    int mpi_file_commsize;
+	int mpi_file_commsize;
 
 	int color = mpi_myrank / ranks_per_file;
 	
@@ -188,25 +188,25 @@ void output_multi_file(int mpi_myrank){
 	sprintf(filename, "output_%04d.txt",color);
 
 	errcode = MPI_File_open(mpi_comm_file, filename, MPI_MODE_CREATE | MPI_MODE_WRONLY, MPI_INFO_NULL, &fh);
-    if(errcode != MPI_SUCCESS){
-    	print_MPI_error(errcode, "MPI_File_open");
-    }
+	if(errcode != MPI_SUCCESS){
+		print_MPI_error(errcode, "MPI_File_open");
+	}
 
 	//output is binary, must converted to read, replacing [rowlength] and [file]:
 	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
 	int offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float) + block_boundary);
 	for (int row = 0; row < chunk_size; row++){
 		int offset_row = row*(rowsize*sizeof(float));
-	    errcode = MPI_File_write_at(fh, offset_rank + offset_row, matrix[row], rowsize,	MPI_FLOAT, &file_status);
-	    if(errcode != MPI_SUCCESS){
-	    	print_MPI_error(errcode, "MPI_File_open");
-	    }
+		errcode = MPI_File_write_at(fh, offset_rank + offset_row, matrix[row], rowsize,	MPI_FLOAT, &file_status);
+		if(errcode != MPI_SUCCESS){
+			print_MPI_error(errcode, "MPI_File_open");
+		}
 	}
 
-    errcode = MPI_File_close(&fh);
-    if(errcode != MPI_SUCCESS){
-    	print_MPI_error(errcode, "MPI_File_open");
-    }
+	errcode = MPI_File_close(&fh);
+	if(errcode != MPI_SUCCESS){
+		print_MPI_error(errcode, "MPI_File_open");
+	}
 
-    MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Barrier(MPI_COMM_WORLD);
 }
