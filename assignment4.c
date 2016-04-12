@@ -10,15 +10,29 @@
 #include<string.h>
 #include<clcg4.h>
 #include<mpi.h>
+#include<pthread.h>
 #include<assert.h>
 
 float** matrix=NULL;
 float** transpose=NULL;
 unsigned int rowsize=0;
 unsigned int chunk_size=0;
+unsigned int thread_count = 0;
 unsigned int errcode = 0;
 unsigned int ranks_per_file = 0;
 unsigned int block_boundary = 0;
+
+void* thread_sum(void* input) {
+	int *threadID = (int*)input;
+	int ymin = (*threadID * rowsize) / thread_count;
+	int ymax = ((*threadID + 1) * rowsize) / thread_count;
+	for (int x = 0; x < chunk_size; ++x) {
+		for (int y = ymin; y < ymax; ++y) {
+			matrix[x][y] += transpose[x][y];
+		}
+	}
+	return 0;
+}
 
 void output_single_file();
 void output_multi_file();
@@ -40,8 +54,9 @@ int main(int argc, char *argv[]){
 	//block_boundary - defines size, in Mb, of block of space between output of each rank. For testing, set to 0 for easy to read output.
 	rowsize = atoi(argv[1]);
 	chunk_size = rowsize / mpi_commsize;
-	ranks_per_file = atoi(argv[2]);
-	block_boundary = atoi(argv[3])*1048576;
+	thread_count = atoi(argv[2]);
+	ranks_per_file = atoi(argv[3]);
+	block_boundary = atoi(argv[4])*1048576;
 
 	//initialize row data and send to other ranks
 	matrix = calloc(chunk_size, sizeof(float*));
@@ -87,8 +102,17 @@ int main(int argc, char *argv[]){
 	//finalize
 	MPI_Barrier(MPI_COMM_WORLD);
 
-	//adding together the matrix and transpose will occur here
-	//resulting sum will be in matrix
+	pthread_t *threads = malloc(thread_count * sizeof(pthread_t));
+	int *threadData = malloc(thread_count * sizeof(int));
+	for (int i = 0; i < thread_count; ++i) {
+		threadData[i] = i;
+		pthread_create(&threads[i], NULL, thread_sum, &threadData[i]);
+	}
+	for (int i = 0; i < thread_count; ++i) {
+		pthread_join(threads[i], NULL);
+	}
+	free(threads);
+	free(threadData);
 
 	MPI_Barrier(MPI_COMM_WORLD);
 
