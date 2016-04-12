@@ -57,7 +57,7 @@ int main(int argc, char *argv[]){
 	MPI_Status status;
 	
 	//create and send row data
-	int testval = mpi_myrank*rowsize*chunk_size;
+	float testval = mpi_myrank*rowsize*chunk_size;
 	for(int i=0; i<chunk_size; i++){
 		//allocate row
 		matrix_rows[i] = malloc(rowsize * sizeof(float));
@@ -98,15 +98,17 @@ int main(int argc, char *argv[]){
 	//finalize
     MPI_Barrier(MPI_COMM_WORLD);
 	
-	for(int x=0; x<chunk_size; x++){
-		printf("rank %d transpose row %d:\n",mpi_myrank,x);
-		for(int k=0; k<rowsize;k++){
-			printf("%.0f\t",transpose_rows[x][k]);
+	for (int i = 0; i < mpi_commsize; ++i) {
+		if (i == mpi_myrank) {
+			for(int x=0; x<chunk_size; x++){
+				for(int k=0; k<rowsize;k++){
+					printf("%.0f\t",transpose_rows[x][k]);
+				}
+				printf("\n");
+			}
 		}
-		printf("\n");
+		MPI_Barrier(MPI_COMM_WORLD);
 	}
-	
-    MPI_Finalize();
 	
 	//free all dynamically allocated memory
 	for(int i=0; i<chunk_size; i++){
@@ -115,6 +117,8 @@ int main(int argc, char *argv[]){
 	}
 	free(matrix_rows);
 	free(transpose_rows);
+	
+    MPI_Finalize();
 	
     return 0;
 }
