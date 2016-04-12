@@ -15,7 +15,7 @@
 float** matrix=NULL;
 float** transpose=NULL;
 unsigned int rowsize=0;
-unsigned int rows_per_rank=0;
+unsigned int chunk_size=0;
 unsigned int errcode = 0;
 unsigned int ranks_per_file = 0;
 unsigned int block_boundary = 0;
@@ -38,15 +38,15 @@ int main(int argc, char *argv[]){
     InitDefault();//initialize RNG streams
 
 	rowsize = atoi(argv[1]);
-	rows_per_rank = rowsize / mpi_commsize;
+	chunk_size = rowsize / mpi_commsize;
 	ranks_per_file = atoi(argv[2]);
     block_boundary = atoi(argv[3])*1048576;
 
 	//initialize row data and send to other ranks
-	matrix = calloc(rows_per_rank, sizeof(float*));
-	transpose = calloc(rows_per_rank, sizeof(float*));
-	int testval = mpi_myrank*rowsize*rows_per_rank;
-	for(int i=0; i<rows_per_rank; i++){
+	matrix = calloc(chunk_size, sizeof(float*));
+	transpose = calloc(chunk_size, sizeof(float*));
+	int testval = mpi_myrank*rowsize*chunk_size;
+	for(int i=0; i<chunk_size; i++){
 		//allocate row
 		matrix[i] = calloc(rowsize, sizeof(float));
 		transpose[i] = calloc(rowsize, sizeof(float));
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]){
 		}		
 		//send row data to the rank that needs it
 		for(int k=0; k<mpi_commsize; k++){
-			MPI_Isend(&(matrix[i][k*rows_per_rank]), rows_per_rank, MPI_INT, k, mpi_myrank*i+i, MPI_COMM_WORLD, &request);
+			MPI_Isend(&(matrix[i][k*chunk_size]), chunk_size, MPI_INT, k, mpi_myrank*i+i, MPI_COMM_WORLD, &request);
 			MPI_Request_free(&request);
 		}
 	}
@@ -64,19 +64,19 @@ int main(int argc, char *argv[]){
 	//receive row data and construct transpose
 	
 	//temporary array for transpose construction
-	float* tmp = calloc(rows_per_rank, sizeof(float));
+	float* tmp = calloc(chunk_size, sizeof(float));
 	
 	//from each rank, receive row_size/rank rows
 	for(int j=0; j<mpi_commsize; j++){//for each rank
-		for(int i=0; i<rows_per_rank; i++){//for each row
-			MPI_Irecv(tmp, rows_per_rank, MPI_INT, j, j*i+i, MPI_COMM_WORLD, &request);
+		for(int i=0; i<chunk_size; i++){//for each row
+			MPI_Irecv(tmp, chunk_size, MPI_INT, j, j*i+i, MPI_COMM_WORLD, &request);
 			MPI_Wait(&request, &status);
 			
 			//printf("tmpchunk from rank %d: %.0f %.0f %.0f\n",j,tmp[0],tmp[1],tmp[2]);
 
-			for(int k=0;k<rows_per_rank;k++){
+			for(int k=0;k<chunk_size;k++){
 				//index of column in tmp == index of row in transpose
-				transpose[k][j*rows_per_rank + i] = tmp[k];
+				transpose[k][j*chunk_size + i] = tmp[k];
 			}
 		}	
 	}
@@ -97,16 +97,30 @@ int main(int argc, char *argv[]){
 	else{
 		output_multi_file(mpi_myrank);
 	}
-	
-    MPI_Finalize();
+
+	/*
+	for (int i = 0; i < mpi_commsize; ++i) {
+		if (i == mpi_myrank) {
+			for(int x=0; x<chunk_size; x++){
+				for(int k=0; k<rowsize;k++){
+					printf("%.0f\t",transpose_rows[x][k]);
+				}
+				printf("\n");
+			}
+		}
+		MPI_Barrier(MPI_COMM_WORLD);
+	}
+	*/
 	
 	//free all dynamically allocated memory
-	for(int i=0; i<rows_per_rank; i++){
+	for(int i=0; i<chunk_size; i++){
 		free(matrix[i]);
 		free(transpose[i]);
 	}
 	free(matrix);
 	free(transpose);
+	
+    MPI_Finalize();
 	
     return 0;
 }
@@ -144,8 +158,8 @@ void output_single_file(int mpi_myrank){
 
 	//output is binary, must format to read in terminal, replacing [rowlength] and [file]:
 	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
-	int offset_rank = mpi_myrank*(rowsize*rows_per_rank*sizeof(float) + block_boundary);
-	for (int row = 0; row < rows_per_rank; row++){
+	int offset_rank = mpi_myrank*(rowsize*chunk_size*sizeof(float) + block_boundary);
+	for (int row = 0; row < chunk_size; row++){
 		//printf("%s",array_int_to_char(matrix[row], rowsize)); 
 		int offset_row = row*(rowsize*sizeof(float));
 	    errcode = MPI_File_write_at_all(fh, offset_rank + offset_row, matrix[row], rowsize, MPI_FLOAT, &file_status);
@@ -190,8 +204,8 @@ void output_multi_file(int mpi_myrank){
 
 	//output is binary, must converted to read, replacing [rowlength] and [file]:
 	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
-	int offset_rank = mpi_file_myrank*(rowsize*rows_per_rank*sizeof(float) + block_boundary);
-	for (int row = 0; row < rows_per_rank; row++){
+	int offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float) + block_boundary);
+	for (int row = 0; row < chunk_size; row++){
 		//printf("%s",array_int_to_char(matrix[row], rowsize)); 
 		int offset_row = row*(rowsize*sizeof(float));
 	    errcode = MPI_File_write_at(fh, offset_rank + offset_row, matrix[row], rowsize,	MPI_FLOAT, &file_status);
