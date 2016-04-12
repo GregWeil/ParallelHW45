@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
 	rowsize = atoi(argv[1]);
 	rows_per_rank = rowsize / mpi_commsize;
 	ranks_per_file = atoi(argv[2]);
-    block_boundary = atoi(argv[3])*1024;//change to 1048576
+    block_boundary = atoi(argv[3])*1048576;
 
 	//initialize row data and send to other ranks
 	matrix = calloc(rows_per_rank, sizeof(float*));
@@ -143,7 +143,7 @@ void output_single_file(int mpi_myrank){
     }
 
 	//output is binary, must format to read in terminal, replacing [rowlength] and [file]:
-	//hexdump -v -e '[rowlength]/4 "%d "' -e '"\n"' [file]
+	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
 	int offset_rank = mpi_myrank*(rowsize*rows_per_rank*sizeof(float) + block_boundary);
 	for (int row = 0; row < rows_per_rank; row++){
 		//printf("%s",array_int_to_char(matrix[row], rowsize)); 
@@ -189,7 +189,7 @@ void output_multi_file(int mpi_myrank){
     }
 
 	//output is binary, must converted to read, replacing [rowlength] and [file]:
-	//hexdump -v -e '[rowlength]/4 "%d "' -e '"\n"' [file]
+	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
 	int offset_rank = mpi_file_myrank*(rowsize*rows_per_rank*sizeof(float) + block_boundary);
 	for (int row = 0; row < rows_per_rank; row++){
 		//printf("%s",array_int_to_char(matrix[row], rowsize)); 
