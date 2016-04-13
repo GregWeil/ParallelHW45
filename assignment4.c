@@ -13,17 +13,17 @@
 #include<pthread.h>
 #include<assert.h>
 
-float** matrix=NULL;
-float** transpose=NULL;
-unsigned int rowsize=0;
-unsigned int chunk_size=0;
+float** matrix = NULL;
+float** transpose = NULL;
+unsigned int rowsize = 0;
+unsigned int chunk_size = 0;
 unsigned int thread_count = 0;
 unsigned int errcode = 0;
 unsigned int ranks_per_file = 0;
 unsigned int block_boundary = 0;
 
 void* thread_sum(void* input) {
-	int *threadID = (int*)input;
+	int* threadID = (int*)input;
 	int ymin = (*threadID * rowsize) / thread_count;
 	int ymax = ((*threadID + 1) * rowsize) / thread_count;
 	for (int x = 0; x < chunk_size; ++x) {
@@ -87,9 +87,6 @@ int main(int argc, char *argv[]){
 		for(int i=0; i<chunk_size; i++){//for each row
 			MPI_Irecv(tmp, chunk_size, MPI_INT, j, j*i+i, MPI_COMM_WORLD, &request);
 			MPI_Wait(&request, &status);
-			
-			//printf("tmpchunk from rank %d: %.0f %.0f %.0f\n",j,tmp[0],tmp[1],tmp[2]);
-
 			for(int k=0;k<chunk_size;k++){
 				//index of column in tmp == index of row in transpose
 				transpose[k][j*chunk_size + i] = tmp[k];
@@ -102,8 +99,8 @@ int main(int argc, char *argv[]){
 	//finalize
 	MPI_Barrier(MPI_COMM_WORLD);
 
-	pthread_t *threads = malloc(thread_count * sizeof(pthread_t));
-	int *threadData = malloc(thread_count * sizeof(int));
+	pthread_t* threads = malloc(thread_count * sizeof(pthread_t));
+	int* threadData = malloc(thread_count * sizeof(int));
 	for (int i = 0; i < thread_count; ++i) {
 		threadData[i] = i;
 		pthread_create(&threads[i], NULL, thread_sum, &threadData[i]);
@@ -115,20 +112,6 @@ int main(int argc, char *argv[]){
 	free(threadData);
 
 	MPI_Barrier(MPI_COMM_WORLD);
-
-	/*
-	for (int i = 0; i < mpi_commsize; ++i) {
-		if (i == mpi_myrank) {
-			for(int x=0; x<chunk_size; x++){
-				for(int k=0; k<rowsize;k++){
-					printf("%.0f\t",transpose_rows[x][k]);
-				}
-				printf("\n");
-			}
-		}
-		MPI_Barrier(MPI_COMM_WORLD);
-	}
-	*/
 
 	if(mpi_commsize <= ranks_per_file){
 		output_single_file(mpi_myrank);
