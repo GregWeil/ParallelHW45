@@ -17,13 +17,9 @@ module load xl
 
 echo {0!s}
 
-srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 1 1 ./1-block/
 srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 1 0 ./1/
-srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 4 1 ./4-block/
 srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 4 0 ./4/
-srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 16 1 ./16-block/
 srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 16 0 ./16/
-srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 32 1 ./32-block/
 srun --ntasks {1!s} ../assignment4.xl 131072 {2!s} 32 0 ./32/
 """
 
