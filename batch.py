@@ -6,7 +6,7 @@ configs = [(64, 0), (16, 4), (4, 16), (1, 64)]
 template = """#!/bin/sh
 #SBATCH --job-name NODE{0!s}RANK{1!s}THREAD{2!s}
 #
-#SBATCH -D /gpfs/u/home/PCP5/PCP5wlgr/scratch/assignment3/{0!s}-{1!s}-{2!s}/
+#SBATCH -D /gpfs/u/home/PCP5/PCP5wlgr/scratch/assignment4/{0!s}-{1!s}-{2!s}/
 #SBATCH --nodes {0!s}
 #SBATCH --time 1:00:00
 #
@@ -17,14 +17,14 @@ module load xl
 
 echo {0!s}
 
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 1 8
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 1 0
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 4 8
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 4 0
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 16 8
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 16 0
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 32 8
-srun --ntasks {1!s} ../assignment4 1024 {2!s} 32 0
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 1 1 ./1-block/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 1 0 ./1/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 4 1 ./4-block/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 4 0 ./4/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 16 1 ./16-block/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 16 0 ./16/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 32 1 ./32-block/
+srun --ntasks {1!s} ../assignment4 1024 {2!s} 32 0 ./32/
 """
 
 for node in nodes:
