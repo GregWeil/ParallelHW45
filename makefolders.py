@@ -17,6 +17,6 @@ for node in nodes:
         for s in template.splitlines():
             if s == "":
                 continue
-            directory = s.format(node, config[0], config[1])
+            directory = s.format(node, config[0]*node, config[1])
             if not os.path.exists(directory):
                 os.makedirs(directory)

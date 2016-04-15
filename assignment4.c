@@ -80,7 +80,7 @@ int main(int argc, char *argv[]){
 		matrix[i] = calloc(rowsize, sizeof(float));
 		transpose[i] = calloc(rowsize, sizeof(float));
 		for(int j=0; j<rowsize; j++){
-			matrix[i][j] = (float)GenVal(i*mpi_myrank);
+			matrix[i][j] = (float)GenVal((i*mpi_myrank)%16384);
 			//matrix[i][j] = testval++;
 		}		
 		//send row data to the rank that needs it
