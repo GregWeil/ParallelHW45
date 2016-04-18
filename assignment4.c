@@ -58,6 +58,7 @@ int main(int argc, char *argv[]){
 	InitDefault();//initialize RNG streams
 	
 	if(mpi_myrank == 0){
+		printf("begin execution\n");
 		//start compute timer
 		start_cycle_time = GetTimeBase();
 	}
@@ -141,7 +142,7 @@ int main(int argc, char *argv[]){
 		end_cycle_time = GetTimeBase();
 		total_cycle_time = (end_cycle_time - start_cycle_time);
 		double num_seconds = total_cycle_time / 1600000000.0; // convert to seconds with clock rate: 1.6ghz
-		printf("Compute time - ranks: %d threads: %d time: %.10f\n",mpi_commsize, thread_count, num_seconds);
+		printf("Compute time:\n\tranks: %d\n\tthreads: %d\n\tranks_per_file: %d\n\ttime: %.10f\n",mpi_commsize, thread_count, ranks_per_file, num_seconds);
 		
 		//start I/O timer
 		start_cycle_time = GetTimeBase();
@@ -159,7 +160,8 @@ int main(int argc, char *argv[]){
 		end_cycle_time = GetTimeBase();
 		total_cycle_time = (end_cycle_time - start_cycle_time);
 		double num_seconds = total_cycle_time / 1600000000.0; // convert to seconds with clock rate: 1.6ghz
-		printf("I/O time - ranks: %d threads: %d time: %.10f\n",mpi_commsize, thread_count, num_seconds);
+		printf("I/O time:\n\tranks: %d\n\tthreads: %d\n\tranks_per_file: %d\n\ttime: %.10f\n",mpi_commsize, thread_count, ranks_per_file, num_seconds);
+		printf("end execution\n");
 	}
 	
 	//free all dynamically allocated memory
@@ -180,7 +182,7 @@ void print_MPI_error(int errcode, char *fun)
 	char errMessage[MPI_MAX_ERROR_STRING];
 	int len;
 	MPI_Error_string(errcode, errMessage, &len);
-	printf("Error in %s: %s\n", fun, errMessage);
+	printf("Error [%d] in %s: %s\n", errcode, fun, errMessage);
 	MPI_Abort(MPI_COMM_WORLD, 1);
 }
 
@@ -210,6 +212,7 @@ void output_single_file(int mpi_myrank){
 		int offset_row = row*(rowsize*sizeof(float));
 		errcode = MPI_File_write_at_all(fh, offset_rank + offset_row, matrix[row], rowsize, MPI_FLOAT, &file_status);
 		if(errcode != MPI_SUCCESS){
+			printf("failure offset: rank: %d row: %d",offset_rank, offset_row);
 			print_MPI_error(errcode, "MPI_File_open");
 		}
 	}
@@ -252,7 +255,8 @@ void output_multi_file(int mpi_myrank){
 	//output is binary, must converted to read, replacing [rowlength] and [file]:
 	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
 	if(block_boundary){
-		offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float) + (BLOCK_SIZE - (rowsize*chunk_size*sizeof(float))%BLOCK_SIZE)%BLOCK_SIZE);
+		//offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float) + (BLOCK_SIZE - (rowsize*chunk_size*sizeof(float))%BLOCK_SIZE)%BLOCK_SIZE);
+		offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float));
 	}
 	else{
 		offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float));
@@ -270,5 +274,5 @@ void output_multi_file(int mpi_myrank){
 		print_MPI_error(errcode, "MPI_File_open");
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Barrier(mpi_comm_file);
 }

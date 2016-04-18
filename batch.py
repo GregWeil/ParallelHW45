@@ -17,14 +17,15 @@ module load xl
 
 echo {0!s}
 
-srun --ntasks {1!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 1 0 ./1/
-srun --ntasks {1!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 4 0 ./4/
-srun --ntasks {1!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 16 0 ./16/
-srun --ntasks {1!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 32 0 ./32/
+srun --ntasks {1!s} {3!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} {1!s} 0 ./1/
+srun --ntasks {1!s} {3!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 4 0 ./4/
+srun --ntasks {1!s} {3!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 16 0 ./16/
+srun --ntasks {1!s} {3!s} /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/assignment4.xl 131072 {2!s} 32 0 ./32/
 """
 
 for node in nodes:
-	for config in configs:
-		file = open('batch/batch-'+str(node)+'-'+str(config[0])+'-'+str(config[1])+'.sh', 'w', newline='')
-		file.write(template.format(node, config[0]*node, config[1]))
-		file.close()
+        for config in configs:
+                ayylmao = "--overcommit" if config[0] == 64 else ""
+                file = open('batch/batch-'+str(node)+'-'+str(config[0])+'-'+str(config[1])+'.sh', 'w', newline='')
+                file.write(template.format(node, config[0]*node, config[1],ayylmao))
+                file.close()
