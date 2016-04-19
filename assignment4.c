@@ -228,7 +228,7 @@ void output_single_file(int mpi_myrank){
 void output_multi_file(int mpi_myrank){
 	MPI_Status file_status;
 	MPI_File fh;
-	int offset_rank = 0;
+	long offset_rank = 0;
 
 	MPI_Comm mpi_comm_file;
 	int mpi_file_myrank;
@@ -262,7 +262,7 @@ void output_multi_file(int mpi_myrank){
 		offset_rank = mpi_file_myrank*(rowsize*chunk_size*sizeof(float));
 	}
 	for (int row = 0; row < chunk_size; row++){
-		int offset_row = row*(rowsize*sizeof(float));
+		long offset_row = row*(rowsize*sizeof(float));
 		errcode = MPI_File_write_at(fh, offset_rank + offset_row, matrix[row], rowsize,	MPI_FLOAT, &file_status);
 		if(errcode != MPI_SUCCESS){
 			print_MPI_error(errcode, "MPI_File_open");
