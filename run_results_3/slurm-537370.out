@@ -1,0 +1,23 @@
+128
+begin execution
+Compute time:
+	ranks: 8192
+	threads: 0
+	ranks_per_file: 8192
+	time: 2403.9795692538
+I/O time:
+	ranks: 8192
+	threads: 0
+	ranks_per_file: 8192
+	time: 958.6092341244
+end execution
+2016-04-18 18:31:02.783 (WARN ) [0xfff90189000] 721123:ibm.runjob.client.Job: 3 INFO RAS events
+2016-04-18 18:31:02.784 (WARN ) [0xfff90189000] 721123:ibm.runjob.client.Job: most recent RAS event text: DDR Correctable Error Summary : count=3575 MCFIR error status:  [MEMORY_CE] This bit is set when a memory CE is detected on a non-maintenance memory read op;
+2016-04-18 18:31:02.784 (WARN ) [0xfff90189000] 721123:ibm.runjob.client.Job: with severity INFO
+begin execution
+srun: error: *** STEP 537370.1 CANCELLED AT 2016-04-18T18:35:07 DUE TO TIME LIMIT ***
+slurmd[q]: *** JOB 537370 CANCELLED AT 2016-04-18T18:35:07 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination
+slurmd[q]: unlink(/var/spool/slurmd/job537370/slurm_script): No such file or directory
+slurmd[q]: rmdir(/var/spool/slurmd/job537370): No such file or directory

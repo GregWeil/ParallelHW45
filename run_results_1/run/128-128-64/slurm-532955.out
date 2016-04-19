@@ -1,0 +1,35 @@
+128
+Compute time - ranks: 128 threads: 64 time: 523.1893610525
+I/O time - ranks: 128 threads: 64 time: 583.3665764719
+Compute time - ranks: 128 threads: 64 time: 521.7653852075
+I/O time - ranks: 128 threads: 64 time: 872.3948561425
+Compute time - ranks: 128 threads: 64 time: 522.6311747225
+Error in MPI_File_open: Invalid argument, error stack:
+Error in MPI_File_open: Invalid argument, error stack:
+Error in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Error in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 117 (rank 117 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 117
+Error in MPI_File_open: Invalid argument, error stack:
+Error in MPI_File_open: Invalid argument, error stack:
+Error in MPI_File_open: Invalid argument, error stack:
+Error in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Abort(1) on node 116 (rank 116 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 116
+Abort(1) on node 126 (rank 126 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 126
+Abort(1) on node 127 (rank 127 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 127
+Abort(1) on node 125 (rank 125 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 125
+Abort(1) on node 124 (rank 124 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 124
+Abort(1) on node 118 (rank 118 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 118
+Abort(1) on node 119 (rank 119 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 119
+2016-04-15 17:11:25.028 (WARN ) [0xfffb23c9000] 718371:ibm.runjob.client.Job: normal termination with status 1 from rank 117
+srun: error: *** STEP 532955.3 CANCELLED AT 2016-04-15T17:17:40 DUE TO TIME LIMIT ***
+slurmd[q]: *** JOB 532955 CANCELLED AT 2016-04-15T17:17:40 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination

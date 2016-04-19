@@ -1,0 +1,16 @@
+64
+Compute time - ranks: 64 threads: 64 time: 902.3199158425
+I/O time - ranks: 64 threads: 64 time: 264.1457864512
+Compute time - ranks: 64 threads: 64 time: 899.9377982463
+Error in MPI_File_open: Invalid argument, error stack:
+Error in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Abort(1) on node 43 (rank 43 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 43
+Abort(1) on node 42 (rank 42 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 42
+2016-04-15 17:01:39.504 (WARN ) [0xfff87549000] 718358:ibm.runjob.client.Job: normal termination with status 1 from rank 43
+Compute time - ranks: 64 threads: 64 time: 900.9392912363
+srun: error: *** STEP 532959.2 CANCELLED AT 2016-04-15T17:24:25 DUE TO TIME LIMIT ***
+slurmd[q]: *** JOB 532959 CANCELLED AT 2016-04-15T17:24:25 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination

@@ -1,0 +1,5 @@
+64
+srun: fatal: You requested -N 64 and -n 4096 which gives --ntasks-per-node=64.  This isn't a valid request without --overcommit.
+srun: fatal: You requested -N 64 and -n 4096 which gives --ntasks-per-node=64.  This isn't a valid request without --overcommit.
+srun: fatal: You requested -N 64 and -n 4096 which gives --ntasks-per-node=64.  This isn't a valid request without --overcommit.
+srun: fatal: You requested -N 64 and -n 4096 which gives --ntasks-per-node=64.  This isn't a valid request without --overcommit.

@@ -1,0 +1,11 @@
+128
+begin execution
+Compute time:
+	ranks: 2048
+	threads: 4
+	ranks_per_file: 2048
+	time: 2025.1171399525
+srun: error: *** STEP 537367.0 CANCELLED AT 2016-04-18T17:34:50 DUE TO TIME LIMIT ***
+slurmd[q]: *** JOB 537367 CANCELLED AT 2016-04-18T17:34:50 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination

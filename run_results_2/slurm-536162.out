@@ -1,0 +1,967 @@
+128
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 128
+	time: 524.0575882187
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 117 (rank 117 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 117
+Abort(1) on node 20 (rank 20 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 20
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 12 (rank 12 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 12
+Abort(1) on node 109 (rank 109 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 109
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1610612736 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -1073741824 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -2147483648 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+failure offset: rank: -536870912 row: 0Error [68217612] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+MPI_FILE_WRITE_AT_ALL(91): Invalid offset argument
+Abort(1) on node 37 (rank 37 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 37
+Abort(1) on node 118 (rank 118 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 118
+Abort(1) on node 54 (rank 54 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 54
+Abort(1) on node 101 (rank 101 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 101
+Abort(1) on node 45 (rank 45 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 45
+Abort(1) on node 124 (rank 124 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 124
+Abort(1) on node 53 (rank 53 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 53
+Abort(1) on node 69 (rank 69 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 69
+Abort(1) on node 44 (rank 44 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 44
+Abort(1) on node 93 (rank 93 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 93
+Abort(1) on node 31 (rank 31 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 31
+Abort(1) on node 103 (rank 103 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 103
+Abort(1) on node 36 (rank 36 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 36
+Abort(1) on node 127 (rank 127 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 127
+Abort(1) on node 29 (rank 29 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 29
+Abort(1) on node 77 (rank 77 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 77
+Abort(1) on node 47 (rank 47 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 47
+Abort(1) on node 94 (rank 94 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 94
+Abort(1) on node 30 (rank 30 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 30
+Abort(1) on node 108 (rank 108 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 108
+Abort(1) on node 13 (rank 13 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 13
+Abort(1) on node 84 (rank 84 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 84
+Abort(1) on node 55 (rank 55 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 55
+Abort(1) on node 78 (rank 78 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 78
+Abort(1) on node 6 (rank 6 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 6
+Abort(1) on node 126 (rank 126 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 126
+Abort(1) on node 52 (rank 52 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 52
+Abort(1) on node 100 (rank 100 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 100
+Abort(1) on node 14 (rank 14 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 14
+Abort(1) on node 116 (rank 116 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 116
+Abort(1) on node 62 (rank 62 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 62
+Abort(1) on node 71 (rank 71 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 71
+Abort(1) on node 5 (rank 5 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 5
+Abort(1) on node 125 (rank 125 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 125
+Abort(1) on node 23 (rank 23 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 23
+Abort(1) on node 68 (rank 68 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 68
+Abort(1) on node 4 (rank 4 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 4
+Abort(1) on node 92 (rank 92 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 92
+Abort(1) on node 21 (rank 21 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 21
+Abort(1) on node 87 (rank 87 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 87
+Abort(1) on node 63 (rank 63 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 63
+Abort(1) on node 61 (rank 61 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 61
+2016-04-17 15:56:12.385 (WARN ) [0xfffa59e9000] 720015:ibm.runjob.client.Job: normal termination with status 1 from rank 117
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 4
+	time: 527.6810484575
+I/O time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 4
+	time: 33.7766380462
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+end execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 16
+	time: 524.7580418675
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 109 (rank 109 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 109
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Abort(1) on node 110 (rank 110 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 110
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 102 (rank 102 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 102
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 111 (rank 111 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 111
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 101 (rank 101 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 101
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 108 (rank 108 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 108
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 103 (rank 103 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 103
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 100 (rank 100 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 100
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Abort(1) on node 84 (rank 84 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 84
+Abort(1) on node 86 (rank 86 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 86
+2016-04-17 16:16:06.123 (WARN ) [0xfffa1ce9000] 720024:ibm.runjob.client.Job: normal termination with status 1 from rank 109
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 32
+	time: 525.0780209038
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Abort(1) on node 12 (rank 12 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 12
+Abort(1) on node 20 (rank 20 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 20
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+Error [68741900] in MPI_File_open: Invalid argument, error stack:
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Abort(1) on node 28 (rank 28 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 28
+Abort(1) on node 15 (rank 15 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 15
+Abort(1) on node 23 (rank 23 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 23
+Abort(1) on node 7 (rank 7 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 7
+Abort(1) on node 21 (rank 21 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 21
+Abort(1) on node 4 (rank 4 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 4
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+MPI_FILE_WRITE_AT(91): Invalid offset argument
+Abort(1) on node 29 (rank 29 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 29
+Abort(1) on node 5 (rank 5 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 5
+Abort(1) on node 31 (rank 31 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 31
+Abort(1) on node 13 (rank 13 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 13
+Abort(1) on node 30 (rank 30 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 30
+Abort(1) on node 6 (rank 6 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 6
+Abort(1) on node 22 (rank 22 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 22
+Abort(1) on node 14 (rank 14 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 14
+Abort(1) on node 63 (rank 63 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 63
+Abort(1) on node 37 (rank 37 in comm 1140850688): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 37
+2016-04-17 16:25:04.573 (WARN ) [0xfff8f8e9000] 720028:ibm.runjob.client.Job: normal termination with status 1 from rank 12

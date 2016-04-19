@@ -1,0 +1,9 @@
+128
+2016-04-17 03:08:38.504 (FATAL) [0xfff95d09000] 16633:ibm.runjob.client.Job: could not start job: block is unavailable due to a previous failure
+2016-04-17 03:08:38.504 (FATAL) [0xfff95d09000] 16633:ibm.runjob.client.Job: node R21-M0-N08-J04 is not available: Software Failure
+2016-04-17 03:08:38.610 (FATAL) [0xfff7fae9000] 16637:ibm.runjob.client.Job: could not start job: block is unavailable due to a previous failure
+2016-04-17 03:08:38.611 (FATAL) [0xfff7fae9000] 16637:ibm.runjob.client.Job: node R21-M0-N08-J04 is not available: Software Failure
+2016-04-17 03:08:38.723 (FATAL) [0xfffa2909000] 16641:ibm.runjob.client.Job: could not start job: block is unavailable due to a previous failure
+2016-04-17 03:08:38.724 (FATAL) [0xfffa2909000] 16641:ibm.runjob.client.Job: node R21-M0-N08-J04 is not available: Software Failure
+2016-04-17 03:08:38.829 (FATAL) [0xfff77f49000] 16645:ibm.runjob.client.Job: could not start job: block is unavailable due to a previous failure
+2016-04-17 03:08:38.830 (FATAL) [0xfff77f49000] 16645:ibm.runjob.client.Job: node R21-M0-N08-J04 is not available: Software Failure
