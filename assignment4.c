@@ -189,7 +189,7 @@ void print_MPI_error(int errcode, char *fun)
 void output_single_file(int mpi_myrank){
 	MPI_Status file_status;
 	MPI_File fh;
-	int offset_rank = 0;
+	MPI_Offset offset_rank = 0;
 
 	//TODO: add correct directory path to filename
 	char filename[1024];
@@ -202,12 +202,12 @@ void output_single_file(int mpi_myrank){
 
 	//output is binary, must format to read in terminal, replacing [rowlength] and [file]:
 	//hexdump -v -e '[rowlength]/4 "%.2f "' -e '"\n"' [file]
-	if(block_boundary){
-		offset_rank = mpi_myrank*(rowsize*chunk_size*sizeof(float) + (BLOCK_SIZE - (rowsize*chunk_size*sizeof(float))%BLOCK_SIZE)%BLOCK_SIZE);
-	}
-	else{
+	//if(block_boundary){
+	//	offset_rank = mpi_myrank*(rowsize*chunk_size*sizeof(float) + (BLOCK_SIZE - (rowsize*chunk_size*sizeof(float))%BLOCK_SIZE)%BLOCK_SIZE);
+	//}
+	//else{
 		offset_rank = mpi_myrank*(rowsize*chunk_size*sizeof(float));
-	}
+	//}
 	for (int row = 0; row < chunk_size; row++){
 		int offset_row = row*(rowsize*sizeof(float));
 		errcode = MPI_File_write_at_all(fh, offset_rank + offset_row, matrix[row], rowsize, MPI_FLOAT, &file_status);
