@@ -143,12 +143,14 @@ int main(int argc, char *argv[]){
 		total_cycle_time = (end_cycle_time - start_cycle_time);
 		double num_seconds = total_cycle_time / 1600000000.0; // convert to seconds with clock rate: 1.6ghz
 		printf("Compute time:\n\tranks: %d\n\tthreads: %d\n\tranks_per_file: %d\n\ttime: %.10f\n",mpi_commsize, thread_count, ranks_per_file, num_seconds);
+		printf("I/O disabled\n");
+		
 		
 		//start I/O timer
 		start_cycle_time = GetTimeBase();
 	}
 
-	if(mpi_commsize <= ranks_per_file){
+	/*if(mpi_commsize <= ranks_per_file){
 		output_single_file(mpi_myrank);
 	}
 	else{
@@ -162,7 +164,7 @@ int main(int argc, char *argv[]){
 		double num_seconds = total_cycle_time / 1600000000.0; // convert to seconds with clock rate: 1.6ghz
 		printf("I/O time:\n\tranks: %d\n\tthreads: %d\n\tranks_per_file: %d\n\ttime: %.10f\n",mpi_commsize, thread_count, ranks_per_file, num_seconds);
 		printf("end execution\n");
-	}
+	}*/
 	
 	//free all dynamically allocated memory
 	for(int i=0; i<chunk_size; i++){

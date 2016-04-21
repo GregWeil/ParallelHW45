@@ -1,0 +1,19 @@
+32
+begin execution
+2016-04-20 15:07:54.512 (WARN ) [0xfff95cc9000] 722716:ibm.runjob.client.Job: terminated by signal 11
+2016-04-20 15:07:54.512 (WARN ) [0xfff95cc9000] 722716:ibm.runjob.client.Job: abnormal termination by signal 11 from rank 768
+begin execution
+/bgsys/source/srcV1R2M2.15270/comm/sys/buildtools/pami/components/memory/MemoryAllocator.h:168: 
+alloc 22784 bytes failed for context
+2016-04-20 15:08:05.888 (WARN ) [0xfff835a9000] 722721:ibm.runjob.client.Job: terminated by signal 6
+2016-04-20 15:08:05.888 (WARN ) [0xfff835a9000] 722721:ibm.runjob.client.Job: abnormal termination by signal 6 from rank 768
+begin execution
+/bgsys/source/srcV1R2M2.15270/comm/sys/buildtools/pami/components/memory/MemoryAllocator.h:168: 
+alloc 22784 bytes failed for context
+2016-04-20 15:08:17.452 (WARN ) [0xfff79f09000] 722722:ibm.runjob.client.Job: terminated by signal 6
+2016-04-20 15:08:17.453 (WARN ) [0xfff79f09000] 722722:ibm.runjob.client.Job: abnormal termination by signal 6 from rank 896
+begin execution
+/bgsys/source/srcV1R2M2.15270/comm/sys/buildtools/pami/components/memory/MemoryAllocator.h:168: 
+alloc 22784 bytes failed for context
+2016-04-20 15:08:28.988 (WARN ) [0xfff7eec9000] 722723:ibm.runjob.client.Job: terminated by signal 6
+2016-04-20 15:08:28.988 (WARN ) [0xfff7eec9000] 722723:ibm.runjob.client.Job: abnormal termination by signal 6 from rank 960

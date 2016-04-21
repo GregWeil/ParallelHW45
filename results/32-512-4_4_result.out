@@ -1,0 +1,7 @@
+begin execution
+Compute time:
+	ranks: 512
+	threads: 4
+	ranks_per_file: 4
+	time: 1776.4800319850
+I/O disabled

@@ -1,0 +1,29 @@
+128
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 128
+	time: 529.4670535675
+I/O disabled
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 4
+	time: 523.9327970650
+I/O disabled
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 16
+	time: 525.9206094100
+I/O disabled
+begin execution
+Compute time:
+	ranks: 128
+	threads: 64
+	ranks_per_file: 32
+	time: 523.1111503900
+I/O disabled

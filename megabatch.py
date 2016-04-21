@@ -6,10 +6,10 @@ configs = [(64, 0), (16, 4), (4, 16), (1, 64)]
 
 
 template = """
-srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} {2!s} 0 ./1/ &
-srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} 4 0 ./4/ &
-srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} 16 0 ./16/ &
-srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} 32 0 ./32/ &
+srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -D /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/results/{0!s}-{2!s}-{4!s}_{2!s}_result.out /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} {2!s} 0 ./1/ &
+srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -D /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/results/{0!s}-{2!s}-{4!s}_4_result.out /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} 4 0 ./4/ &
+srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -D /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/results/{0!s}-{2!s}-{4!s}_16_result.out /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} 16 0 ./16/ &
+srun -N{0!s} --partition {1!s} --time 60 --ntasks {2!s} {3!s} -D /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/run/{0!s}-{2!s}-{4!s}/ -o /gpfs/u/home/PCP5/PCP5crls/scratch/hw4/results/{0!s}-{2!s}-{4!s}_32_result.out /gpfs/u/scratch/PCP5/PCP5crls/hw4/assignment4.xl 131072 {4!s} 32 0 ./32/ &
 """
 
 
